@@ -10,19 +10,20 @@
     "default_popup": "popup.html"
   },
   "background":{
-	"scripts":["js/eventPage.js"],
-	"persistent":false
-  },
-  "content_scripts":[{
-	"matches": [
-		"http://www.lionair.co.id/*",
-		"https://secure2.lionair.co.id/*"
-		],
-	"js": ["js/jquery-1.11.1.min.js", "js/contentScript.js"]
-  }],
-  "permissions": [
-    "http://www.lionair.co.id/*",
-	"https://secure2.lionair.co.id/*",
-	"tabs"
-  ]
+   "scripts":["js/jquery-1.11.1.min.js","js/jquery-dateFormat.min.js","js/eventPage.js"],
+   "persistent":false
+ },
+ "content_scripts":[{
+   "matches": [
+   "http://www.lionair.co.id/*",
+   "https://secure2.lionair.co.id/*"
+   ],
+   "js": ["js/jquery-1.11.1.min.js", "js/contentScript.js","js/jquery-dateFormat.min.js"],
+   "run_at": "document_idle"
+ }],
+ "permissions": [
+ "http://www.lionair.co.id/*",
+ "https://secure2.lionair.co.id/*",
+ "tabs"
+ ]
 }
