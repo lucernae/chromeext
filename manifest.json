@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+
+  "name": "One-click Kittens",
+  "description": "This extension demonstrates a 'browser action' with kittens.",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "background":{
+	"scripts":["js/eventPage.js"],
+	"persistent":false
+  },
+  "content_scripts":[{
+	"matches": [
+		"http://www.lionair.co.id/*",
+		"https://secure2.lionair.co.id/*"
+		],
+	"js": ["js/jquery-1.11.1.min.js", "js/contentScript.js"]
+  }],
+  "permissions": [
+    "http://www.lionair.co.id/*",
+	"https://secure2.lionair.co.id/*",
+	"tabs"
+  ]
+}
